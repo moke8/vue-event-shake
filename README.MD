@@ -24,6 +24,13 @@ npm i vue-event-shake
 <input @input.shake="onInput()"/>
 ```
 
+### eslint rule
+```
+    'vue/valid-v-on': ['error', {
+        modifiers: ['shake'],
+    }],
+```
+
 ## 中文
 ### 介绍
 为您的vue项目增加快捷的防抖事件修饰器
@@ -47,4 +54,11 @@ npm i vue-event-shake
 // .vue file
 <div @click.shake="onClick()">click me!</div>
 <input @input.shake="onInput()"/>
+```
+
+### eslint规则配置
+```
+    'vue/valid-v-on': ['error', {
+        modifiers: ['shake'],
+    }],
 ```
