@@ -1,6 +1,6 @@
 {
     "name": "vue-event-shake",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "为您的vue项目增加快捷的防抖事件修饰器",
     "main": "index.js",
     "scripts": {
