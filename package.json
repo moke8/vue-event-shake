@@ -1,0 +1,23 @@
+{
+    "name": "vue-event-shake",
+    "version": "0.0.1",
+    "description": "为您的vue项目增加快捷的防抖事件修饰器",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/moke8/vue-event-shake.git"
+    },
+    "keywords": [
+      "vue",
+      "event",
+      "shake",
+      "vue-event-shake",
+      "event-shake"
+    ],
+    "author": "mokevip@foxmail.com",
+    "license": "ISC"
+  }
+  
