@@ -2,6 +2,7 @@
 ## English
 ### introduce
 Add a quick anti shake event modifier to your vue project
+Note: The received content in event="" must be a function
 
 ### install
 ```
@@ -34,6 +35,7 @@ npm i vue-event-shake
 ## 中文
 ### 介绍
 为您的vue项目增加快捷的防抖事件修饰器
+注意：event="" 中接受内容必须是一个函数
 
 ### 安装
 ```

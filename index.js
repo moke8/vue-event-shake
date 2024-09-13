@@ -1,5 +1,5 @@
 function functionShake(code, functionName) {
-    const reg = new RegExp(`function\\s+${functionName}[\\s\\S]+?{`)
+    const reg = new RegExp(`(async\\s)?(function\\s+)?${functionName}\\s?\\([\\s\\S]*?\\)\\s+?{`)
     const fun = code.match(reg)
     const functionHeader = fun[0]
     if (!fun[0]) return code
@@ -7,7 +7,9 @@ function functionShake(code, functionName) {
     code = code.replace(reg, `${isAsync ? '' : 'async '}${functionHeader}\nawait pluginShakeFunction()\n`)
     return code
 }
-
+class AAA {
+    async abc() {}
+}
 module.exports = function rollupRewrite() {
     return {
         name: 'vue-event-shake',
