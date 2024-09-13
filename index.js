@@ -2,6 +2,7 @@ function functionShake(code, functionName) {
     const reg = new RegExp(`function\\s+${functionName}[\\s\\S]+?{`)
     const fun = code.match(reg)
     const functionHeader = fun[0]
+    if (!fun[0]) return code
     const isAsync = functionHeader.includes('async')
     code = code.replace(reg, `${isAsync ? '' : 'async '}${functionHeader}\nawait pluginShakeFunction()\n`)
     return code
@@ -22,7 +23,7 @@ module.exports = function rollupRewrite() {
                 const scriptHeader = code.match(/<script .+?>/)
                 code = code.replace(scriptHeader, `${scriptHeader}\nimport { pluginShakeFunction } from 'vue-event-shake/shake.js'\n`)
                 for (const str of matchs) {
-                    const functionMatch = str.match(/["'](.+?)["']/)
+                    const functionMatch = str.match(/["'](.+?)(\(.+?\))?["']/)
                     const functionName = functionMatch[1]
                     code = functionShake(code, functionName)
                 }
